@@ -93,26 +93,20 @@
 
     /* ── Hero ── */
     .hero.is-primary-custom {
-      background: linear-gradient(135deg, #0d2e45 0%, #1a4a6e 50%, #2a6899 100%);
+      background: #ffffff;
       position: relative;
       overflow: hidden;
-      padding: 4rem 1.5rem 3rem;
+      padding: 3rem 1.5rem 2rem;
+      border-bottom: 1px solid var(--border);
     }
-    .hero.is-primary-custom::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 70% 30%, rgba(232,112,58,0.15) 0%, transparent 60%),
-                  radial-gradient(ellipse at 20% 80%, rgba(42,104,153,0.3) 0%, transparent 50%);
-      pointer-events: none;
-    }
+    .hero.is-primary-custom::before { display: none; }
     .hero.is-primary-custom .hero-body { position: relative; z-index: 1; }
 
     .publication-title {
       font-family: 'Source Serif 4', Georgia, serif;
       font-size: 2.4rem !important;
       font-weight: 700;
-      color: #ffffff !important;
+      color: var(--primary) !important;
       line-height: 1.25;
       margin-bottom: 1.2rem;
     }
@@ -121,12 +115,12 @@
     }
 
     .publication-authors {
-      color: rgba(255,255,255,0.9);
+      color: var(--text);
       font-size: 1.05rem;
       margin-bottom: 0.4rem;
     }
-    .publication-authors a { color: #f0c896; text-decoration: none; font-weight: 500; }
-    .publication-authors a:hover { color: #ffffff; text-decoration: underline; }
+    .publication-authors a { color: var(--primary); text-decoration: none; font-weight: 500; }
+    .publication-authors a:hover { color: var(--primary-light); text-decoration: underline; }
 
     .venue-tag {
       display: inline-block;
@@ -149,8 +143,8 @@
       transition: transform 0.15s, box-shadow 0.15s;
     }
     .publication-links .button:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.25); }
-    .publication-links .button.is-dark { background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.35); color: #fff; }
-    .publication-links .button.is-dark:hover { background: rgba(255,255,255,0.22); }
+    .publication-links .button.is-dark { background: var(--primary); border: 1.5px solid var(--primary); color: #fff; }
+    .publication-links .button.is-dark:hover { background: var(--primary-light); border-color: var(--primary-light); }
 
     /* ── Metrics strip ── */
     .metrics-strip {
@@ -487,18 +481,16 @@
         </h1>
 
         <div class="publication-authors" style="margin-bottom:0.8rem;">
-          <!-- <em>Anonymized Authors &nbsp;·&nbsp; Anonymized Affiliations</em> -->
-        <!-- <br> -->
         <span>
           Bhuvan Sachdeva, Sneha Kumari, Rudransh Agarwal, Shalaka Kumaraswamy,<br>
           Niharika Prasad, Raphael Lechtenboehmer, Simon Mueller, Maximilian W. M. Wintergerst,<br>
           Thomas Schultz, Kaushik Murali, Mohit Jain
         </span>
 
-        <div style="font-size:0.92rem; margin-top:0.35rem; line-height:1.5;">
-          Sankara Eye Hospital, Bengaluru, India<br>
-          Microsoft Research, Bengaluru, India<br>
-          University of Bonn, Bonn, Germany
+        <div style="font-size:0.88rem; margin-top:0.6rem; line-height:1.8;">
+          <span style="display:inline-block;background:#dce8f2;color:var(--primary);font-weight:600;border-radius:20px;padding:0.15rem 0.85rem;margin:0.15rem;">Sankara Eye Hospital, Bengaluru, India</span>
+          <span style="display:inline-block;background:#dce8f2;color:var(--primary);font-weight:600;border-radius:20px;padding:0.15rem 0.85rem;margin:0.15rem;">Microsoft Research, Bengaluru, India</span>
+          <span style="display:inline-block;background:#dce8f2;color:var(--primary);font-weight:600;border-radius:20px;padding:0.15rem 0.85rem;margin:0.15rem;">University of Bonn, Bonn, Germany</span>
         </div>
         </div>
 
@@ -529,7 +521,7 @@
   </section>
 
   <!-- ── METRICS STRIP ── -->
-  <div class="metrics-strip">
+  <!-- <div class="metrics-strip">
     <div class="columns" style="max-width:900px;margin:0 auto;justify-content:center;gap:0;">
       <div class="metric-item column" style="flex:1;padding:0.5rem 1rem;">
         <div class="metric-number">104</div>
@@ -548,7 +540,7 @@
         <div class="metric-label">Complication Types Detected</div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <main id="main-content">
 
@@ -575,7 +567,7 @@
 
         <div class="column">
           <div class="complication-card">
-            <div class="complication-icon">👁️</div>
+            <!-- <div class="complication-icon">👁️</div> -->
             <h3>Iris Prolapse</h3>
             <p>Protrusion of iris tissue through the corneal incision, appearing as dark brownish-red tissue extending beyond the incision margin. Caused by fluctuations in intraocular pressure or incision instability.</p>
             <span class="f1-badge">F1: 75.00%</span>
@@ -584,7 +576,7 @@
 
         <div class="column">
           <div class="complication-card accent-top">
-            <div class="complication-icon">🔬</div>
+            <!-- <div class="complication-icon">🔬</div> -->
             <h3>Posterior Capsule Rupture (PCR)</h3>
             <p>A rupture in the thin posterior capsule supporting the lens, typically occurring during lens removal or cortical wash. Appears as a visible tear in the capsule. Can lead to vitreous loss if unmanaged.</p>
             <span class="f1-badge" style="background:var(--accent);">F1: 57.14%</span>
@@ -593,7 +585,7 @@
 
         <div class="column">
           <div class="complication-card gold-top">
-            <div class="complication-icon">💧</div>
+            <!-- <div class="complication-icon">💧</div> -->
             <h3>Vitreous Loss</h3>
             <p>Occurs when the gel-like vitreous prolapses into the anterior chamber, often following PCR. Appears as translucent, web-like strands through the pupil, causing characteristic tear-drop pupil distortion.</p>
             <span class="f1-badge" style="background:#c9a227;">F1: 48.00%</span>
